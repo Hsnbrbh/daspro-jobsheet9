@@ -1,20 +1,9 @@
 import java.util.Scanner;
 public class SearchNilai15 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+       int[] nilai = {78, 65, 90, 55, 88, 72};
 
-        System.out.println("Masukkan jumlah elemen array: ");
-         int jumlah = input.nextInt();
-
-         int[] nilai = new int[jumlah];
-
-         for (int i = 0; i < nilai.length; i++) {
-            System.out.print("Masukkan nilai ke-" + (i + 1) + ": ");
-            nilai[i] = input.nextInt();
-         }
-         System.out.println("Masukkan nilai yang ingin dicari: ");
-        int key = input.nextInt();
-        
+        int key = 90;
         boolean ditemukan = false;
 
         for (int i = 0; i < nilai.length; i++) {
@@ -29,7 +18,7 @@ public class SearchNilai15 {
 
         if (!ditemukan) {
             System.out.println("Nilai " + key
-                    + " tidak ditemukan.");
+                    + " tidak ditemukan dalam array." + java.util.Arrays.toString(nilai));
         }
     }
 }
