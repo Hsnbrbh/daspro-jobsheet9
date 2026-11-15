@@ -2,15 +2,22 @@ import java.util.Scanner;
 public class ArrayRataNilai15 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int[] nilaiMhs = new int [10];
+
+        System.out.println("Masukkan jumlah mahasiswa: ");
+        int jumlah = input.nextInt();
+        
+        int[] nilaiMhs = new int [jumlah];
         int total = 0;
         double rata2;
+        int jumlahLulus = 0;
 
         for (int i = 0; i < nilaiMhs.length; i++) {
-            System.out.println("Masukkan nilai mahasiswa ke-" + (i + 1) + ": ");
-            nilaiMhs[i] = input.nextInt();
-            total += nilaiMhs[i];
+            if (nilaiMhs[i] > 70) {
+                jumlahLulus++;
+            }
         }
+        System.out.println("Jumlah mahasiswa lulus: " + jumlahLulus);
+
         rata2 = (double) total / nilaiMhs.length;
         System.out.println("Total nilai: " + total);
         System.out.println("Rata-rata: " + rata2);
@@ -19,10 +26,10 @@ public class ArrayRataNilai15 {
         int terendah = nilaiMhs[0];
         for (int i = 1; i < nilaiMhs.length; i++) {
             if (nilaiMhs[i] > tertinggi) {
-                tertinggi = nilaiMhs[i]
+                tertinggi = nilaiMhs[i];
             }
             if (nilaiMhs[i] < terendah) {
-                terendah = nilaiMhs[i]
+                terendah = nilaiMhs[i];
             }
         }
         System.out.println("Nilai tertinggi: " + tertinggi);
